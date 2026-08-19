@@ -1,2 +1,0 @@
-Module	Section	Sample Name	Source
-fastp	all_sections	SRR1770413	/home/dlobo8/Documentos/ngs-pipeline-automation/test_results/01_qc/qc_metrics.json
