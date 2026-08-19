@@ -20,6 +20,7 @@ An end-to-end, modular Next-Generation Sequencing (NGS) data processing pipeline
 
 ## 🔄 Pipeline Workflow
 
+```text
 [ Raw Reads (R1/R2 FASTQ) ]
             │
             ▼
@@ -41,11 +42,13 @@ An end-to-end, modular Next-Generation Sequencing (NGS) data processing pipeline
 ┌─────────────────────────────────────────┐
 │ Module 4: Consolidated Reporting        │ ➔ MultiQC (Interactive HTML Report)
 └─────────────────────────────────────────┘
+```
 
 ---
 
 ## 📁 Repository Structure
 
+```text
 ngs-pipeline-automation/
 ├── .gitignore               # Ignores heavy genomic data (*.fastq, *.bam) and outputs
 ├── environment.yml          # Conda environment file with all dependencies
@@ -53,10 +56,11 @@ ngs-pipeline-automation/
 ├── README.md                # Project documentation
 └── modules/                 # Core modular execution scripts
     ├── __init__.py          # Package initialization
-    ├── module_1_qc_filter.py      # Quality control & adapter trimming
-    ├── module_2_alignment.py      # HISAT2 alignment execution
-    ├── module_3_post_processing.py # SAM to Sorted BAM processing
-    └── module_4_reporting.py      # Consolidated MultiQC generation
+    ├── module_1_qc_filter.py        # Quality control & adapter trimming
+    ├── module_2_alignment.py        # HISAT2 alignment execution
+    ├── module_3_post_processing.py  # SAM to Sorted BAM processing
+    └── module_4_reporting.py        # Consolidated MultiQC generation
+```
 
 ---
 
@@ -70,15 +74,19 @@ ngs-pipeline-automation/
 
 ### 1. Clone the Repository
 
-git clone https://github.com/dariolobo/ngs-pipeline-automation.git
+```bash
+git clone [https://github.com/dariolobo/ngs-pipeline-automation.git](https://github.com/dariolobo/ngs-pipeline-automation.git)
 cd ngs-pipeline-automation
+```
 
 ### 2. Create and Activate the Conda Environment
 
 Use the provided `environment.yml` to automatically install Python, `fastp`, `hisat2`, `samtools`, and `multiqc`:
 
+```bash
 conda env create -f environment.yml
 conda activate ngs-pipeline
+```
 
 ---
 
@@ -86,12 +94,14 @@ conda activate ngs-pipeline
 
 Run the main pipeline by specifying the input paired-end FASTQ files, reference genome index prefix, and output directory:
 
+```bash
 python main_pipeline.py \
   -1 data/sample_R1.fastq.gz \
   -2 data/sample_R2.fastq.gz \
   -x genome/hisat2_index/genome_prefix \
   -o pipeline_results \
   -t 8
+```
 
 ### Command-Line Arguments
 
@@ -109,8 +119,10 @@ python main_pipeline.py \
 
 Upon successful execution, the output directory will contain structured subdirectories for each pipeline stage:
 
+```text
 pipeline_results/
 ├── 01_qc/                 # Cleaned FASTQ files and fastp HTML/JSON reports
 ├── 02_alignment/          # Raw alignment SAM file
-├── 03_processed_bam/     # Coordinate-sorted BAM file and .bai index
-└── 04_reports/           # Consolidated MultiQC interactive HTML report
+├── 03_processed_bam/      # Coordinate-sorted BAM file and .bai index
+└── 04_reports/            # Consolidated MultiQC interactive HTML report
+```
