@@ -1,0 +1,24 @@
+# Genomic Data & Sequence Files
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.sam
+*.cram
+
+# Output Directories & Reports
+results/
+data/
+raw_data/
+qc_reports/
+*.html
+*.json
+
+# Python Environment & Cache
+__pycache__/
+*.pyc
+.venv/
+env/
+.DS_Store
