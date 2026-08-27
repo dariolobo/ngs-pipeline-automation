@@ -40,7 +40,7 @@ def run_quality_filter(
         f"fastp -i {read1} -I {read2} "
         f"-o {filtered_r1} -O {filtered_r2} "
         f"--qualified_quality_phred {min_phred} "
-        f"--length_required {min_phred} "
+        f"--length_required {min_length} "
         f"-j {json_report} -h {html_report}"
     )
 
