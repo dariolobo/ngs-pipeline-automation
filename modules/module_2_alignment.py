@@ -9,7 +9,7 @@ def run_command(cmd: str) -> str:
     """
     print(f"[EXEC]: {cmd}")
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    if result.returncode !=0:
+    if result.returncode != 0:
         print(f"[ERROR]: {result.stderr.strip()}", file=sys.stderr)
         sys.exit(1)
     return result.stdout
