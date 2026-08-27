@@ -75,7 +75,7 @@ ngs-pipeline-automation/
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/dariolobo/ngs-pipeline-automation.git](https://github.com/dariolobo/ngs-pipeline-automation.git)
+git clone https://github.com/dariolobo/ngs-pipeline-automation.git
 cd ngs-pipeline-automation
 ```
 
