@@ -9,7 +9,7 @@ def run_command(cmd: str) -> str:
     """
     print(f"[EXEC]: {cmd}")
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    if result.returncode !=0:
+    if result.returncode != 0:
         print(f"[ERROR]: {result.stderr.strip()}", file=sys.stderr)
         sys.exit(1)
     return result.stdout
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("-s", "--sam", required=True, help="Path to input SAM file")
     parser.add_argument("-o", "--outdir", default="03_post_processing_output", help="Output directory")
-    parser.add_argument("-t", "--threads", type=int, default=4, help="Number of CPU threads to use (defaul:4)")
+    parser.add_argument("-t", "--threads", type=int, default=4, help="Number of CPU threads to use (default:4)")
 
     args = parser.parse_args()
     run_post_processing(args.sam, args.outdir, args.threads)
