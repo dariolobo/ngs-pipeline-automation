@@ -46,6 +46,16 @@ An end-to-end, modular Next-Generation Sequencing (NGS) data processing pipeline
 
 ---
 
+## 📊 Example Output
+
+The pipeline generates a consolidated MultiQC report at the end of the workflow, combining quality-control and alignment metrics across samples.
+
+**[View Interactive MultiQC Report](https://dariolobo.github.io/ngs-pipeline-automation/examples/multiqc_report/multiqc_report.html)**
+
+The report provides an interactive overview of sequencing quality, read filtering, alignment statistics, and other relevant metrics.
+
+---
+
 ## 📁 Repository Structure
 
 ```text
